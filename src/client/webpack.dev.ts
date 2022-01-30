@@ -14,7 +14,9 @@ const webpackConfig = (): Configuration => ({
     },
     output: {
         path: path.join(__dirname, '/build'),
-        filename: 'build.js'
+        filename: 'build.js',
+        clean: true,
+        publicPath: '/'
     },
     module: {
         rules: [
@@ -35,7 +37,7 @@ const webpackConfig = (): Configuration => ({
     plugins: [
         new HtmlWebpackPlugin({
             // HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles
-            template: './public/index.html'
+            template: path.join(__dirname, './public/index.html')
         }),
         // DefinePlugin allows you to create global constants which can be configured at compile time
         new DefinePlugin({

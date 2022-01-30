@@ -3,10 +3,11 @@
     "sourceMap": true,
     "target": "es6",
     "module": "commonjs",
-    "rootDir": "./",
+    "rootDir": "./../",
     "outDir": "./build",
     "esModuleInterop": true,
-    "strict": true
+    "strict": true,
+    "baseUrl": "./"
   },
   "exclude": [
     "node_modules"

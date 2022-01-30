@@ -7,7 +7,7 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "allowJs": true,
-    "baseUrl": "src",
+    "baseUrl": "./",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "downlevelIteration": true,
