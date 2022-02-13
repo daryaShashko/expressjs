@@ -12,6 +12,14 @@ const App: React.FC = () => {
         // setQuotes(parsedResponse);
     };
 
+    const getQuoteById = async () => {
+        const response = await fetch('/api/quotes/ec5f0d07-df5d-4447-934a-4674c8734f88', {
+            method: 'GET' // *GET, POST, PUT, DELETE, etc.
+        });
+        const parsedResponse = await response.json();
+        console.log('----QUOTE', parsedResponse);
+    };
+
     return (
         <div className="wrapper">
             <h1>React 17 and TypeScript 4 App!🚀</h1>
@@ -30,6 +38,7 @@ const App: React.FC = () => {
                 <Paper elevation={3} />
             </Box>
             <Button onClick={getAllQuotes}>Get all quotes</Button>
+            <Button onClick={getQuoteById}>Get quote</Button>
         </div>
     );
 };
