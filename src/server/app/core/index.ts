@@ -1,2 +1,1 @@
-export * as AppConfig from './config.service';
-export { AppConfigType } from './config.types';
+export { AppConfig } from './config.service';

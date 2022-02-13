@@ -1,10 +1,9 @@
-import quotesService from './quotes.service';
+import Router from 'express';
+import QuotesController from './quotes.controller';
 
-export const quotesRoutes = {
-    '/api/quotes': {
-        get: quotesService.getAllQuotes
-    },
-    '/api/quotes/:quoteId': {
-        get: quotesService.getQuoteById
-    }
-};
+const router = Router();
+
+router.get('/quotes', QuotesController.getAllQuotes);
+router.get('/quotes/:quoteId', QuotesController.getQuoteById);
+
+export default router;

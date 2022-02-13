@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 import { resolve } from 'path';
-import { AppConfigType } from '../core';
-import AppConfig from './../core/config.service';
+import { AppConfig, AppConfigType } from '../core';
 import ReadableStream = NodeJS.ReadableStream;
 import { Quote } from './quotes.types';
 
@@ -9,7 +8,8 @@ class QuotesService {
     private readonly filename: string;
 
     constructor(appConfigService: AppConfigType) {
-        this.filename = resolve(process.cwd(), appConfigService.quotesPath, 'quotes.json');
+        console.log('------', resolve(process.cwd(), appConfigService.quotesPath, 'quotes.json'));
+        this.filename = resolve(process.cwd(), 'quotes.json');
 
         this.getAccessToFile();
     }
@@ -40,4 +40,4 @@ class QuotesService {
     }
 }
 
-export default new QuotesService(AppConfig);
+export default new QuotesService(new AppConfig());

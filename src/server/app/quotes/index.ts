@@ -1,2 +1,2 @@
 export * as QuotesService from './quotes.service';
-export { quotesRoutes } from './quotes.routes';
+export * as quotesRoutes from './quotes.routes';
