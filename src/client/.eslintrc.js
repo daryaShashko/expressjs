@@ -27,6 +27,8 @@ module.exports = {
                 extensions: ['.js', '.jsx', '.ts', '.tsx']
             }
         ],
+        'import/prefer-default-export': 'off',
+        'react/function-component-definition': 'off',
         'import/extensions': [
             'error',
             'always',

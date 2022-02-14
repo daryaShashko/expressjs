@@ -1,14 +1,13 @@
 import * as fs from 'fs';
 import { resolve } from 'path';
-import { AppConfig, AppConfigType } from '../core';
+import { AppConfig } from '../core';
 import ReadableStream = NodeJS.ReadableStream;
 import { Quote } from './quotes.types';
 
 class QuotesService {
     private readonly filename: string;
 
-    constructor(appConfigService: AppConfigType) {
-        console.log('------', resolve(process.cwd(), appConfigService.quotesPath, 'quotes.json'));
+    constructor(appConfigService: AppConfig) {
         this.filename = resolve(process.cwd(), 'quotes.json');
 
         this.getAccessToFile();
